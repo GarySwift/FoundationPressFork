@@ -1,0 +1,286 @@
+// Border radius shorthand
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+
+@mixin button-hover($color) {
+	border: 3px solid $color;
+	color: $color;
+	background-color: rgba($white, 0.4);
+	-webkit-box-shadow: 0px 0px 15px 0px rgba($color, 0.75);
+	-moz-box-shadow: 0px 0px 15px 0px rgba($color, 0.75);
+	box-shadow: 0px 0px 15px 0px rgba($color, 0.75);
+	text-shadow: 0px 0px 10px rgba($white, 0.75);
+}
+
+@mixin rotate($deg) {
+	-ms-transform: rotate($deg); /* IE 9 */
+    -webkit-transform: rotate($deg); /* Chrome, Safari, Opera */
+    transform: rotate($deg);		
+}
+$border-radius: 3px;
+.sub-section {
+	ul {list-style: none}	
+}
+
+//@start #top-banner
+#top-banner.page-section {
+	background-color: rgba($primary-color, 1);
+
+	// background-color: yellow;
+-webkit-box-shadow: inset 0px 0px 105px 0px rgba($dark, 0.75);
+-moz-box-shadow: inset 0px 0px 105px 0px rgba($dark, 0.75);
+box-shadow: inset 0px 0px 105px 0px rgba($dark, 0.75);
+	border-top: 2px solid rgba($white, 1);
+	padding: 20px;
+	// padding-top: 350px;
+	div.row {
+		position: relative;	
+	}
+	.sub-section {
+	
+	}
+	#banner-footer.sub-section {
+
+		clear: right;
+		background-color: transparent;// rgba(white, 0.1);
+		background-color: transparent;
+		border: none;
+		padding: 0;
+		max-width: 100%;
+		margin-bottom: 0;
+		text-align: center;	
+		footer {
+			max-width: 470px;
+			margin: 0 auto;
+			// border: 2px solid #000;
+			color: $white;
+		}
+		a {
+			color: $secondary_color;
+			font-weight: bold;
+		}
+		// border: 1px solid #000;
+		padding-top: 40px;
+	}
+
+}
+#top-banner-logo {
+	position: absolute;
+	left: 500px;
+	top: 300px;
+	width: 300px;
+}
+.sub-section.search-category {	
+	position: absolute;	
+	max-width: 350px;
+	color: $white;
+	text-align: center;
+	i.fa {
+		color: $secondary-color;
+	}
+	ul {
+		margin-left: 0;
+	}
+	h4 {
+		color: $secondary-color;
+		font-family: $oswald;
+	}
+	// right: 0;
+	// top: 0;
+	// background-color: #E5E5E5;
+	// border: 1px solid #A7A7A7;
+	// padding: 20px;
+	// margin-bottom: 10px;	
+}
+img.arrow {
+	position: absolute;	
+	top: 0;
+	// left: 0;
+}
+#arrow-down-1 {
+	top: 150px;
+	left: 600px;
+}
+#right-bend-arrow-1 {}
+#left-bend-arrow-1 {
+	top: 190px;
+	right: 350px;
+	@include rotate(20deg);
+}
+#left-loop-arrow-1 {}
+#right-loop-arrow-1 {
+	top: 0;
+	left: 0;
+	top: 180px;
+	left: 460px;	
+    // @include rotate(-27deg);	
+}
+
+#right-arrow-1 {
+	top: 400px;
+	left: 360px;	
+}
+#right-arrow-big-1 {
+	top: 400px;
+	right: 270px;	
+}
+#search-category-0.sub-section {
+	left: 250px;
+	top: 200px;
+// @include rotate(-4deg);
+}
+#search-category-1.sub-section {
+	left: 570px;
+	top: 70px;
+	 // transform: rotate(3deg);
+}
+#search-category-2.sub-section {
+	right: 200px;
+	top: 200px;
+    // transform: rotate(5deg);	
+}
+#buy-now-top.sub-section {
+	float: right;
+	max-width: 250px;
+	// border: 1px solid #000;
+	margin-top: 350px;
+	padding: 15px;
+	color: $secondary_color;
+	font-weight: bold;
+	@include border-radius($border-radius);
+	background-color: $dark;//rgba($primary-color, 0.8);
+	a {
+		display: block;
+		font-weight: normal;
+		font-size: 1.8rem;
+		padding: 8px 0;	
+		font-family: $oswald;
+		text-transform: uppercase;
+		@include border-radius($border-radius);
+	}
+	ul {
+		list-style: disc;
+		// margin-left: 0;
+	}
+}
+#intro-top.sub-section {
+	margin-top: 380px;
+	max-width: 350px;
+	// border: 1px solid #000;
+	text-align: center;
+	color: $white;
+	p {
+		// font-weight: bold;
+	}
+	h1 {
+		color: $secondary-color;
+		@extend h2;
+	}
+}
+//@end #top-banner
+
+//@start #why-choose-lsb
+#why-choose-lsb.page-section {
+	background-color: $dark;// rgba($primary-color, 1);
+	padding: 40px;
+	padding-top: 50px;
+	li {padding-bottom: 12px}
+	li:last-child {padding-bottom: 0}	
+	h3 {
+		color: $secondary-color;
+		@extend h1;
+	}
+	@media #{$large-up} {
+		.left {
+			text-align: right;
+		}
+		h3 {
+			max-width: 300px;
+			text-align: right;
+			float: right;
+			margin-top: 20px;
+		}				
+	}
+	.right {
+		color: $white;
+		font-weight: bold;
+	}
+	i.fa {
+		color: $secondary-color;
+	}	
+}
+#why-reasons.sub-section {}
+//@end #why-choose-lsb
+
+//@start #columns-x2
+#columns-x2.page-section {
+	padding: 0;
+	padding-top: 70px;
+	padding-bottom: 60px;
+}
+//@end #columns-x2
+
+//@start #mid-page-banner
+#mid-page-banner.page-section {background-image: url('../images/bg/apple-desk-office-technology-1900.jpg');background-attachment: fixed}
+// #mid-page-banner.page-section {background-image: url('../images/bg/apple-desk-office-technology-2000-letterbox-2.jpg')}
+#mid-page-banner.page-section {
+	background-color: #A6A6A6;
+	text-align: center;
+	height: 600px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	// background-attachment: fixed;
+	background-size: cover;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	h3, h5 {
+		color: $white;
+	}
+	@media #{$large-up} {
+		h3 {
+			font-size: 6.5rem;
+		}
+		h5 {
+			font-size: 2rem;
+			font-weight: bold;
+		}		
+	}
+	div.buttons {
+		margin-top: 30px;
+	}
+	a.button-outline {
+		border: 3px solid $white;
+		color: $white;
+		padding: 5px 20px;
+		margin: 10px;
+		font-size: 1.7rem;
+		font-weight: bold;
+		@include border-radius($border-radius);
+		background-color: rgba($black, 0.2);
+		transition: all 0.3s ease-in;
+	}
+	a.button-outline.buy-now:hover {
+		@include button-hover($primary-color);
+	}
+	a.button-outline.learn-more:hover {
+		@include button-hover($pink);
+	}
+	#mid-page-banner-logo {
+		height: 170px;
+	}	
+}
+//@end #mid-page-banner
+//@start #page-footer
+#page-footer.page-section {
+	padding: 20px 0;
+	padding-top: 70px;
+	padding-bottom: 0;
+	text-align: center;
+}
+//@end #page-footer

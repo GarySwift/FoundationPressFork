@@ -1,0 +1,29 @@
+img.tips {
+    max-width: 100%;
+}
+th#post_featured_image, td.post_featured_image, th#page_featured_image, td.page_featured_image {
+    width: 3em;
+}
+td.post_featured_image, td.page_featured_image  {
+	vertical-align: middle;
+    text-align: center;
+}
+#dashboard-widgets .inside h3.tips {
+    background-color: yellow;
+}
+th#post_featured, td.post_featured, th#post_excerpt, td.post_excerpt {
+    width: 5em;
+    	vertical-align: middle;
+    text-align: center;
+
+}
+th#post_excerpt, td.post_excerpt {
+	width: 4em;
+}
+td.post_featured_image img {
+	max-width: 30px;
+	min-height: 30px;
+}
+#tagsdiv-search-category {
+    display: none;
+}

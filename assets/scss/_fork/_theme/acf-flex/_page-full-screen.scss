@@ -1,0 +1,23 @@
+#page-full-screen {
+margin-top: 3rem;
+}
+
+
+
+@media #{$medium-only} {
+	.pad-med-l-r {
+		// padding: 0 15rem;
+		// text-align: center;
+	}	
+}
+// .pad-med-l-r {
+// 	// padding: 0 15rem;
+// 	// text-align: center;
+// 	// background-color: red;s
+// 	.call-to-action {
+// 		margin: 0 auto;
+// 	}
+// }	
+.call-to-action {
+	margin: 0 auto;
+}

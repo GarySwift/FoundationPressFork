@@ -1,0 +1,17 @@
+@media #{$small-only} {
+	section#featured-services {
+		div.corner-content {
+			text-align: center;
+			h5 {
+				@include small-block-header;
+			}
+		}
+	}	
+}
+@media #{$medium-only} {
+	section#featured-services {
+		div.corner-content {
+			text-align: center;
+		}
+	}	
+}

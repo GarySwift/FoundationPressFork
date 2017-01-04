@@ -1,0 +1,19 @@
+// 1. Global
+// ---------
+// $foundation-palette: (
+//   primary: #01468b,
+//   secondary: #ac5580,
+//   success: #3adb76,
+//   warning: #ffae00,
+//   alert: #ec5840,
+// );
+// $primary-color: map-get($foundation-palette, primary);
+// $secondary-color: map-get($foundation-palette, secondary);
+
+
+// 4. Base Typography
+// ------------------
+// $body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+// $header-font-family: $body-font-family;
+// $anchor-color: $primary-color;
+// $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);

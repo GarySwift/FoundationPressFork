@@ -1,0 +1,44 @@
+[
+    {
+        "key": "group_57f92f90d4434",
+        "title": "Post Extra Fields",
+        "fields": [
+            {
+                "key": "field_57f92f9d0e883",
+                "label": "Excerpt",
+                "name": "excerpt",
+                "type": "textarea",
+                "instructions": "This will be used on the home page as short description of the post. You should write a short version of the post here keeping it to under 140 characters. (Copy the first paragraph if you are unsure of what to do)",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": 140,
+                "rows": 3,
+                "new_lines": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

@@ -1,0 +1,121 @@
+$sidebar-anchor-color: #3D3D3D;
+$sidebar-anchor-color-hover: scale-color($sidebar-anchor-color, $lightness: -24%); 
+
+article.sidebar-menu-widget {
+	h6{
+		background-color: $primary-color;
+		color: $white;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		// margin-bottom: 5px;
+		@extend h5;
+	}	
+}
+#hook-location-header { 
+background-color: $primary-color;
+color: $white;
+text-align: center;
+margin: 0;
+padding: 0;
+}
+ul.sidebar-menu {
+	font-family: $header-font-family;
+	background-color: red;
+	margin-left: 0;
+	li {
+		// background-color: #D7D7D7;
+		list-style-type: none;
+		border-bottom: 1px solid rgba($primary-color, 1);
+		a {
+			text-transform: uppercase;
+			font-size: 1.5rem;
+			font-weight: lighter;
+			background-color: #fff;
+			display: block;
+			width: 100%;
+			padding: 5px;
+			text-align: center;
+			// margin: 3px;
+			transition: all 0.5s;
+			color:$sidebar-anchor-color
+		}
+		a:hover {
+			background-color: #F3F3F3;
+			color: $sidebar-anchor-color-hover;
+		}
+		a.current-menu-item {
+			background-color: #F4F4F4;
+			color: $sidebar-anchor-color-hover;			
+		}
+		a.current-menu-item:hover  {
+			background-color: #E6E6E6;
+			color: $sidebar-anchor-color-hover;			
+		}
+	}
+}
+.sticky-sidebar {
+	// padding-left: 10px;
+	// padding-right: 10px;
+}
+
+$charcoal: #343434;
+// article.widget {
+// 	h6 {
+// 		@extend h4;
+// 		color: $charcoal;
+// 	}
+// }
+
+article.widget.dark-box {
+	padding: 15px;
+	background-color: $charcoal;
+	color: $primary-color;
+	margin-bottom: 20px;
+	h6 {
+		color: $primary-color;
+	}
+}
+
+article.solar {
+	padding: 15px;
+	background-color: rgba($primary-color, 0.2);
+	color: $secondary-color; 
+	margin-bottom: 20px;
+	h6 {
+		color: $secondary-color; 
+	}
+}
+article.widget.light {
+	padding: 15px;
+	background-color: #DADADA;
+	color: $charcoal;
+	margin-bottom: 20px;
+	h6 {
+		color: $charcoal;
+	}
+}
+.brightlight-text-widget {
+	img {
+		margin-bottom: 1rem;
+	}
+}
+article.widget-latest-projects, article.widget-featured-products {
+	article {
+		header {
+			.entry-image {
+				float: right;
+				padding-left: 10px;
+			}
+
+		}
+
+	}
+	.upw-posts article {
+	    // display: block;
+	    margin-bottom: 1em;//1.5em;
+	    // padding-bottom: 1em;
+	    border-bottom: none;//1px solid #ddd;
+	}
+	margin-bottom: 20px;
+}

@@ -1,0 +1,66 @@
+[
+    {
+        "key": "group_572b399ab8b99",
+        "title": "Post Format: Image",
+        "fields": [
+            {
+                "key": "field_572b3a517f882",
+                "label": "Notes",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "You may crop a letterbox version of the featured image here. This image will be used in the continuous posts\/news page.\r\n\r\nHowever, this does not replace the featured image. That is still the most important image to set. Note that you should use the same image for both the letterbox and featured image.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_572b39eeb2040",
+                "label": "Letterbox Image",
+                "name": "letterbox_image",
+                "type": "image_crop",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "crop_type": "hard",
+                "target_size": "custom",
+                "width": 800,
+                "height": 300,
+                "preview_size": "full",
+                "force_crop": "yes",
+                "save_in_media_library": "no",
+                "retina_mode": "no",
+                "save_format": "object",
+                "library": "all"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_format",
+                    "operator": "==",
+                    "value": "image"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

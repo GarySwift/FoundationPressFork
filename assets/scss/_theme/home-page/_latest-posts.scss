@@ -1,0 +1,22 @@
+//Latest posts
+@media #{$small-only} {
+	#home-latest-posts {
+		.post-block {
+			h5 {
+				@include small-block-header;
+			}			
+			.entry-content {
+				margin-bottom: 50px;
+			}
+		}
+	}	
+}
+@media #{$medium-only} {
+	#home-latest-posts {
+		.post-block {
+			.entry-content {
+				margin-bottom: 50px;
+			}
+		}
+	}	
+}

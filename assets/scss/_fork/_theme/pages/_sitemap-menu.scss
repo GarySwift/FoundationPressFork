@@ -1,0 +1,30 @@
+#sitemap-menu {
+	$border: 1px solid #E2E2E2;
+	> li {
+		list-style-type: none;
+		padding-bottom: 7px;
+		padding-top: 7px;
+		border-bottom: $border;
+		> ul {
+			margin-left: 20px;
+			margin-top: 7px;
+			border-top: $border;
+			> li {
+				border-bottom: $border;
+
+				> ul {
+					margin-left: 20px;
+					margin-bottom: 40px;
+					border-top: $border;
+					> li {
+						margin-left: 20px;	
+						border-bottom: $border;				
+					}
+				}
+			}
+		}
+	}
+	> li.menu-item-has-children {
+		border-bottom: none;
+	}
+}

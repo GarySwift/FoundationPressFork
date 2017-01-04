@@ -1,0 +1,29 @@
+.image-text-split-block {
+	// background-color: #F5EEE9;
+	margin-bottom: 40px;
+	.image-link {
+		position: relative;
+		max-width: 405px;
+		margin: 0 auto;
+		span {
+			display: inline-block;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			background-color: rgba($primary-color, 0.5);
+			padding: 5px 20px;
+			text-transform: lowercase;
+			color: $white;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+	}
+	.image-link:hover {
+		span {
+			background-color: rgba($primary-color, 1);
+		}
+	}
+	.entry-content {
+		// background-color: #F5D5F3;
+	}
+}

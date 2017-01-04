@@ -1,0 +1,16 @@
+.testimonial-block {
+	background-color: rgba($primary-color, 0.1);
+	padding: 20px;
+	margin-bottom: 40px;
+	border-left: 4px solid $primary-color;
+	.name {
+
+	}
+	.icon {
+		color: $primary-color;
+		font-size: 80px;
+		padding-left: 10px;
+		padding-bottom: 20px;
+		float: right;
+	}
+}

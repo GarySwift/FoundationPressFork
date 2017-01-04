@@ -1,0 +1,99 @@
+[
+    {
+        "key": "group_56b09a47645be",
+        "title": "Page Layout Settings",
+        "fields": [
+            {
+                "key": "field_5700d542734f7",
+                "label": "Page Layout",
+                "name": "page_layout",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "page": "Show Sidebar",
+                    "page-full-width": "Page in Container",
+                    "page-full-screen": "Full Screen Page"
+                },
+                "other_choice": 0,
+                "save_other_choice": 0,
+                "default_value": "page-full-width",
+                "layout": "vertical"
+            },
+            {
+                "key": "field_570e53bab1421",
+                "label": "Sidebar Side",
+                "name": "sidebar_side",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5700d542734f7",
+                            "operator": "==",
+                            "value": "page"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "left": "Left",
+                    "right": "Right"
+                },
+                "other_choice": 0,
+                "save_other_choice": 0,
+                "default_value": "right",
+                "layout": "horizontal"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-templates\/page-afc-flex.php"
+                }
+            ],
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-templates\/page-contact.php"
+                }
+            ],
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-templates\/page-form-builder.php"
+                }
+            ],
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-templates\/page-test.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

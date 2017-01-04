@@ -1,0 +1,23 @@
+div.selling-points {
+  $color: $primary-color;
+  .head, .body {
+    padding: 10px;
+  }
+  .head {
+    background-color: $color;
+    text-align: center;
+  }
+  .body {
+    border: 1px solid $color;
+    margin-top: 0;
+    background-color: #F5F5F5;
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $white;
+  }
+  .selling-point {
+    margin-bottom: 20px;
+  }
+}

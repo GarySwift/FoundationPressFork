@@ -1,0 +1,40 @@
+
+
+.wrap {
+  overflow: hidden;
+  // width: 840px;
+  margin: 0 auto;
+  img { display: block; }
+  // background-color: red;
+  // padding: 20px;
+  article, aside, figure, footer, header, hgroup, 
+menu, nav, section { display: block; margin: 0; }
+}
+
+.tint {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+}
+
+.tint:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,255,255, 0.5);
+  transition: all .3s linear;
+}
+
+.tint:hover:before { background: none; }
+
+$img-tint-color: rgba(200,100,0,0.1);
+.t2:before { background: $img-tint-color}
+.t3:before { background: rgba(255,0,0, 0.5); }
+.t4:before { background: rgba(0,255,0, 0.5); }

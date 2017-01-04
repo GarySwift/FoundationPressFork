@@ -1,0 +1,7 @@
+// $primary-color: #DD9215;
+// $secondary-color: #4C5321;
+$primary-color: map-get($foundation-palette, primary);
+$secondary-color: map-get($foundation-palette, secondary);
+$highlight: #99A300;
+// $purple: #631343;
+$footer-bg: #1C262E;

@@ -1,0 +1,29 @@
+article.contact-form-widget {
+	// background-color: $success-color;
+	text-align: initial;
+
+	.form-builder {
+		padding-bottom: 15px;
+		label {
+			color: $white;
+		}
+		.form-label {
+			text-align: left;
+			@extend .small-12;
+			@extend .medium-12; 
+			@extend .large-12; 
+			@extend .columns;
+		}
+		.form-input {
+			@extend .small-12;
+			@extend .medium-12; 
+			@extend .large-12; 
+			@extend .columns;
+		}
+		button {
+			@extend .expanded;
+			@extend .secondary;
+			margin-bottom: 0;
+		}
+	}
+}

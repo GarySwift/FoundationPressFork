@@ -1,0 +1,6 @@
+aside {
+	h6 {
+		@extend h5;
+		color: $secondary-color;
+	}
+}

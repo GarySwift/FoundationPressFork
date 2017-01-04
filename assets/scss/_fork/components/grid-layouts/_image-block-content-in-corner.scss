@@ -1,0 +1,72 @@
+.image-blocks-content-in-corner {
+	// background-color: #F8F8F8;
+	.block {
+
+		margin: 15px 0;
+		.wrapper {
+			position: relative;
+			// border: 1px solid #000;
+			.corner-content {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				max-width: 70%;
+				min-height: 150px;
+				max-height: 150px;
+				overflow: hidden;
+				background-color: white;
+				padding: 0 12px;
+				h3,h4, h5 {
+					margin-bottom: 0;//0.1rem;
+					margin-top: 5px;
+				}
+				div.entry-content {
+					color: $body-font-color;
+				}
+			}
+		}
+	}
+}
+// @media #{$medium-only} {
+@include breakpoint(medium only) {
+	.image-blocks-content-in-corner {
+		// background-color: red;
+		.block {
+			.wrapper {
+				$height: 170px;
+				.corner-content {
+					max-width: 100%;
+					max-height: $height;
+					min-height: $height;
+					// background-color: rgba($white,0.8);
+					padding: 0;
+					h3,h4 {
+						margin-bottom: 0;
+					}
+				}
+				padding-bottom: $height;
+			}
+		}
+	}		
+}
+// @media #{$small-only} {
+@include breakpoint(small only) {
+	.image-blocks-content-in-corner {
+		.block {
+			.wrapper {
+				$height: 170px;
+				.corner-content {
+					max-width: 100%;
+					max-height: $height;
+					min-height: $height;
+					// background-color: rgba($primary-color,0.1);
+					padding: 0;
+					h3,h4 {
+						margin-bottom: 0;
+					}
+				}
+				padding-bottom: $height;
+			}
+		}
+	}		
+}

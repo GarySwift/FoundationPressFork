@@ -1,0 +1,11 @@
+@mixin footer-box-shadow {
+	-webkit-box-shadow: inset 0px 0px 164px 37px rgba(6,44,81,1);
+	-moz-box-shadow: inset 0px 0px 164px 37px rgba(6,44,81,1);
+	box-shadow: inset 0px 0px 164px 37px rgba(6,44,81,1);
+}
+
+@mixin small-block-header {
+	font-size: 1.4rem;
+	margin-top: 0.7rem;
+	margin-bottom: 0.3rem;
+}

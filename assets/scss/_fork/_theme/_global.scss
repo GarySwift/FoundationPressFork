@@ -1,0 +1,16 @@
+.entry-content {
+	li {
+		position: relative;
+		padding-left: 17px;
+		list-style: none;
+	}
+ 	li:before {
+		content: '\25A0';
+		font-size: 20px;
+		position: absolute;
+		left: 0;
+		top: -6px;
+		display: block;
+		color: #FF8000;
+	}
+}

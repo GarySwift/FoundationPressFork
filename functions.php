@@ -49,3 +49,8 @@ require_once( 'library/responsive-images.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
+
+require_once('functions-fork.php');
+require_once('library-fork/functions-fork-admin.php');
+require_once('library-fork/_ajax.php');
+require_once('functions-theme-specific.php');

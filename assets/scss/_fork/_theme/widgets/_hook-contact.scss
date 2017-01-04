@@ -1,0 +1,32 @@
+#hook-contact {
+	background-color: rgba($primary-color, 0.07);
+	// padding: 20px;
+	margin: 20px 0;
+	margin-bottom: 35px;
+	padding-bottom: 15px;
+	border: 1px solid $primary-color;
+	.header {
+		background-color: $primary-color;
+		color: $white;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 5px;;
+	}
+	.sub {
+		color: $primary-color;
+		@extends h5;
+	}
+	i.fa {
+		font-size: 5rem;
+		color: $primary-color;
+		display: block;
+	}
+	div.hr {
+		margin: 7px auto;
+		// margin-bottom: 10px;
+		max-width: 70%;
+		border-bottom: 1px solid rgba($primary-color, 0.5);
+		text-align: center;
+	}
+}

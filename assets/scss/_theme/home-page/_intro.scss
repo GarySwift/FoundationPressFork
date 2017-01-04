@@ -1,0 +1,39 @@
+section#intro {}
+#driver-widget {
+	min-height: 300px;	
+	padding-top: 12px;
+	background-color: $secondary-color;
+	padding: 12px;
+	color: $white;
+	p {
+		font-family: $header-font-family;
+	}
+	h4 {
+		margin-top: 5px;
+		margin-bottom: 0;
+	}	
+}
+#driver-widget-row {
+	display: none;
+	margin-bottom: 50px;
+}
+@media #{$small-only}{
+	section#intro {
+		.about-us {
+			padding-top: 30px;
+		}
+	}
+	#driver-widget-column{
+		display: none;
+	}
+	#driver-widget-row {
+		display: block;
+	}	
+}
+@media #{$medium-only}{
+	section#intro {
+		.about-us {
+			padding-top: 30px;
+		}
+	}	
+}

@@ -1,0 +1,83 @@
+/***********************************************************************************
+
+  Gary Swift custom styles:
+  ref: Gary Swift https://github.com/GarySwift
+
+************************************************************************************/
+
+// Templates
+@import "utilities/left-sidebar-sticky";
+
+@import "fonts";
+// Utilities & ACF
+@import "utilities/acf-flex-content";
+@import "utilities/acf-google-maps";
+@import "utilities/selling-point-single";
+@import "utilities/selling-points-multi";
+@import "utilities/call-to-actions";
+@import "utilities/acf-form-builder";
+@import "utilities/row-builder-with-blocks";
+@import "utilities/full-row-builder";
+@import "utilities/testimonials";
+// @import "utilities/select2";
+@import "utilities/magnific-popup";
+// @import "utilities/image-overlay";
+
+
+// @import "utilities/orbit-slider";
+@import "acf-flex/page-full-screen";
+@import "acf-flex/justified-image-grid";
+@import "acf-flex/full-screen-bg-img";
+@import "acf-flex/row-bg-img";
+@import "acf-flex/images";
+@import "utilities/headers";
+// Widgets
+@import "widgets/sidebar-menu-widget";
+@import "widgets/hook-contact";
+// Parts
+// @import "parts/quick-links";
+
+
+// Theme
+@import "colors";
+@import "global";
+
+@import "parts/footer";
+@import "parts/story-board";
+@import "pages/contact";
+@import "pages/home";
+@import "pages/about";
+@import "pages/page-form";
+
+// Header
+@import "header/header";
+@import "header/top-bar-center";
+@import "header/featured-hero";
+@import "header/header-upper";
+
+// @import "components/loop-block-image-text-split-block";
+// @import "components/industry-project";
+// @import "components/technical-docs";
+// @import "components/promobox";
+
+// Pages
+// @import "pages/sitemap-menu";
+
+.email-template {
+	
+	header {
+		
+		h1 {
+			
+		}
+	}
+	section {
+		
+	}
+	footer {
+		
+		h5, h6 {
+			
+		}		
+	}
+}
