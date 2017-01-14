@@ -63,8 +63,20 @@ else {
                 // New Section ***************************
                 // Block Builder
                 elseif(get_row_layout() == 'row_builder_with_blocks' ):
-                    include 'afc-partials/block-builder-partials/block-builder.php';
+                    $filename='';
+                    if( get_sub_field('section_hook') ) {
+                        $filename = 'afc-partials/block-builder-partials/'.get_sub_field('section_hook');
+                        if (file_exists(dirname(__FILE__).'/'.$filename)) {
+                            include $filename;
+                        }
+                        else {
+                            include 'afc-partials/block-builder-partials/_error-msg-no-section-hook-found.php';
 
+                        }
+                    }
+                    else {
+                        include 'afc-partials/block-builder-partials/block-builder.php';
+                    }
                 elseif(get_row_layout() == 'row_builder' ):
                     include 'afc-partials/full-row-builder-partials/row_builder.php';
 

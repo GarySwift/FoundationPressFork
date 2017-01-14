@@ -1,23 +1,23 @@
-#footer-container {
-	background-color: $footer;
-	border-top: none;
-}
-@media #{$medium-only} {
-	#footer-container {
-		.columns.contact {
-			background-color: red;
-		}
-	}
-}
+// #footer-container {
+// 	background-color: $footer;
+// 	border-top: none;
+// }
+// @media #{$medium-only} {
+// 	#footer-container {
+// 		.columns.contact {
+// 			background-color: red;
+// 		}
+// 	}
+// }
 
-@media #{$large-up} {
-.columns.contact {
-	// background-color: red;
-	padding-left: 40px;
-}	
-}
-.fa.social {
-	display: inline-block;
-	width: 25px;
-	text-align: center;
-}
+// @media #{$large-up} {
+// .columns.contact {
+// 	// background-color: red;
+// 	padding-left: 40px;
+// }	
+// }
+// .fa.social {
+// 	display: inline-block;
+// 	width: 25px;
+// 	text-align: center;
+// }

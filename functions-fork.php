@@ -26,7 +26,7 @@ require_once( 'library-fork/wordpress-content-helper-functions/_featured-image.p
 require_once( 'library-fork/wordpress-content-helper-functions/_read-more.php' );
 require_once( 'library-fork/wordpress-content-helper-functions/_video-functions.php' );
 
-require_once( 'library-fork/acf-flexible-content/_flexible-content.php' );
+// require_once( 'library-fork/acf-flexible-content/_flexible-content.php' );
 require_once( 'library-fork/wordpress-content-helper-functions/_acf-content.php' );
 
 # the_functions - Various functions that are used to load post content

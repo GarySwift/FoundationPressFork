@@ -12,14 +12,18 @@ if ( have_rows('blocks') ) : ?>
 			$data_equalizer='';
 			$call_to_action='';
 		}
+$row_class = row_class($row_type, $total, $blocks_in_row_sm, $blocks_in_row_med, $blocks_in_row);
 
+// $row_class = 'small-'.$blocks_in_row_sm.' medium-'.$blocks_in_row_med.' large-'.$blocks_in_row.' columns';
+// echo "<br><pre>"; var_dump($row_class); echo "</pre>";
 
 	?> 
 
-	<div class="<?php echo row_class($row_type, $total, $blocks_in_row_sm, $blocks_in_row_med, $blocks_in_row) ?> block-<?php echo $block_type . ' ' .$text_and_image_layout ?> <?php echo $call_to_action ?>" <?php echo $data_equalizer ?>>
+	<div class="<?php echo $row_class ?> block-<?php echo $block_type . ' ' .$text_and_image_layout ?> <?php echo $call_to_action ?>" <?php echo $data_equalizer ?>>
 		<?php while( have_rows('blocks') ) : the_row(); $count++; ?>
-
-			<div class="<?php echo block_class($row_type, $total, $count, $blocks_in_row_sm, $blocks_in_row_med, $blocks_in_row); ?>">
+			<?php $block_class = block_class($row_type, $total, $count, $blocks_in_row_sm, $blocks_in_row_med, $blocks_in_row); ?>
+			<div class="<?php echo $block_class ?>">
+			<?php //echo $block_class; ?>
 				<?php 
 					$link_block=false;
 					include('_link.php');

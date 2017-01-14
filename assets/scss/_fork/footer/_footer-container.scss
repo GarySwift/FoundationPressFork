@@ -1,51 +1,51 @@
-#footer-container {
-	$text-shadow: 0px 0px 10px;
-	background-color: $primary-color;
-	color: $white;
-	a {
-		color: $white;
-		transition: text-shadow 0.3s ease-in;
-	}
-	a:hover {
-		text-shadow: $text-shadow rgba($white, 1);
-	}
-	.social-media {
-		$margin-left: 10px;
-		$margin-right: 10px;
-		i.fa.social {
-			font-size: 4rem;
-			padding: 5px;
-			transition: text-shadow 0.3s ease-in;
-			// text-shadow: 0px 0px 25px rgba($white, 1);
-		}
-		i.fa-twitter {
-			color: $twitter;
-			margin-left: $margin-left;
-			margin-right: $margin-right;
-		}
-		i.fa-facebook {
-			color: $facebook;
-			margin-left: $margin-left;
-			margin-right: $margin-right;
-		}
-		i.fa-facebook-official {;
-			margin-left: $margin-left;
-			margin-right: $margin-right;
-		}	
-		i.fa-linkedin {
-			color: $linkedin;
-		}
-		i.fa-twitter:hover {
-			text-shadow: $text-shadow rgba($twitter, 1);
-		}
-		i.fa-facebook:hover {
-			text-shadow: $text-shadow rgba($facebook, 1);
-		}	
-		i.fa-linkedin:hover {
-			text-shadow: $text-shadow rgba($linkedin, 1);
-		}										
-	}
-}
-#copyright {
-	text-align: center;
-}
+// #footer-container {
+// 	$text-shadow: 0px 0px 10px;
+// 	background-color: $primary-color;
+// 	color: $white;
+// 	a {
+// 		color: $white;
+// 		transition: text-shadow 0.3s ease-in;
+// 	}
+// 	a:hover {
+// 		text-shadow: $text-shadow rgba($white, 1);
+// 	}
+// 	.social-media {
+// 		$margin-left: 10px;
+// 		$margin-right: 10px;
+// 		i.fa.social {
+// 			font-size: 4rem;
+// 			padding: 5px;
+// 			transition: text-shadow 0.3s ease-in;
+// 			// text-shadow: 0px 0px 25px rgba($white, 1);
+// 		}
+// 		i.fa-twitter {
+// 			color: $twitter;
+// 			margin-left: $margin-left;
+// 			margin-right: $margin-right;
+// 		}
+// 		i.fa-facebook {
+// 			color: $facebook;
+// 			margin-left: $margin-left;
+// 			margin-right: $margin-right;
+// 		}
+// 		i.fa-facebook-official {;
+// 			margin-left: $margin-left;
+// 			margin-right: $margin-right;
+// 		}	
+// 		i.fa-linkedin {
+// 			color: $linkedin;
+// 		}
+// 		i.fa-twitter:hover {
+// 			text-shadow: $text-shadow rgba($twitter, 1);
+// 		}
+// 		i.fa-facebook:hover {
+// 			text-shadow: $text-shadow rgba($facebook, 1);
+// 		}	
+// 		i.fa-linkedin:hover {
+// 			text-shadow: $text-shadow rgba($linkedin, 1);
+// 		}										
+// 	}
+// }
+// #copyright {
+// 	text-align: center;
+// }

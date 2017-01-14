@@ -1,96 +1,96 @@
-#sign-up-form {
-    // background-color: rgba(white, 0.2);
-    border-bottom: 1px $primary-color solid;
-    .form-label {
-        background-color: red;
-        display: none;
-    }
-    margin: 0 40px;
-}
-#sign-up-form {
-    [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
-        display: block;
-        -webkit-box-sizing: content-box;
-        box-sizing: content-box;
-        width: 92%;
-        // height: 2.4375rem;
-        // padding: 0.5rem;
-        border: none;//1px solid #cacaca;
-        // margin: 0 0 1rem;
-        // font-family: inherit;
-        // font-size: 1rem;
-        // color: #0a0a0a;
-        background-color: transparent;// #fefefe;
-        // -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
-        // box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
-        // border-radius: 0;
-        // -webkit-transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
-        // transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
-        // transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
-        // transition: box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
-        // -webkit-appearance: none;
-        // -moz-appearance: none;
-        text-align: center;
+// #sign-up-form {
+//     // background-color: rgba(white, 0.2);
+//     border-bottom: 1px $primary-color solid;
+//     .form-label {
+//         background-color: red;
+//         display: none;
+//     }
+//     margin: 0 40px;
+// }
+// #sign-up-form {
+//     [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+//         display: block;
+//         -webkit-box-sizing: content-box;
+//         box-sizing: content-box;
+//         width: 92%;
+//         // height: 2.4375rem;
+//         // padding: 0.5rem;
+//         border: none;//1px solid #cacaca;
+//         // margin: 0 0 1rem;
+//         // font-family: inherit;
+//         // font-size: 1rem;
+//         // color: #0a0a0a;
+//         background-color: transparent;// #fefefe;
+//         // -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+//         // box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+//         // border-radius: 0;
+//         // -webkit-transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+//         // transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+//         // transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+//         // transition: box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+//         // -webkit-appearance: none;
+//         // -moz-appearance: none;
+//         text-align: center;
 
-    }
-    .button.large {
-        font-size: 1.0rem;
-        margin: 0 0 1rem;
-    }
-    .error {
-        color: red;
-        display: none;
-    }  
-}
+//     }
+//     .button.large {
+//         font-size: 1.0rem;
+//         margin: 0 0 1rem;
+//     }
+//     .error {
+//         color: red;
+//         display: none;
+//     }  
+// }
 
-#sign-up-form {
-    $font-size: 1.2rem;
-    $font-color: $primary-color;
+// #sign-up-form {
+//     $font-size: 1.2rem;
+//     $font-color: $primary-color;
 
-    $bg-hover: rgba(white, 0.3);
-    .button.large {
-         background-color: rgba(white, 0);
-         color: $font-color;
-         font-weight: normal;
-         font-size: $font-size;
-    }     
-    [type='email'] {
-        background-color: rgba(white, 0);
-        color: $font-color;
-        font-weight: normal;
-        font-size: $font-size;
-    }
-    .button.large:hover {
-         background-color: $bg-hover;
-    }     
-    [type='email']:hover {
-        background-color: $bg-hover;
-    }    
-    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-      color: $font-color;
-    }
-    ::-moz-placeholder { /* Firefox 19+ */
-      color: $font-color;
-    }
-    :-ms-input-placeholder { /* IE 10+ */
-      color: $font-color;
-    }
-    :-moz-placeholder { /* Firefox 18- */
-      color: $font-color;
-    }    
+//     $bg-hover: rgba(white, 0.3);
+//     .button.large {
+//          background-color: rgba(white, 0);
+//          color: $font-color;
+//          font-weight: normal;
+//          font-size: $font-size;
+//     }     
+//     [type='email'] {
+//         background-color: rgba(white, 0);
+//         color: $font-color;
+//         font-weight: normal;
+//         font-size: $font-size;
+//     }
+//     .button.large:hover {
+//          background-color: $bg-hover;
+//     }     
+//     [type='email']:hover {
+//         background-color: $bg-hover;
+//     }    
+//     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+//       color: $font-color;
+//     }
+//     ::-moz-placeholder { /* Firefox 19+ */
+//       color: $font-color;
+//     }
+//     :-ms-input-placeholder { /* IE 10+ */
+//       color: $font-color;
+//     }
+//     :-moz-placeholder { /* Firefox 18- */
+//       color: $font-color;
+//     }    
    
-}
+// }
 
 
-#contact-links-1 {
-    // background-color: rgba(white, 0.1);
-    margin-top: 20px;
-    .columns {
-        border: 1px solid $primary-color;
-        padding: 0.8rem;
-        text-align: center;
-    }
-    .columns.left {
-        border-right: none;
-    }  
-}
+// #contact-links-1 {
+//     // background-color: rgba(white, 0.1);
+//     margin-top: 20px;
+//     .columns {
+//         border: 1px solid $primary-color;
+//         padding: 0.8rem;
+//         text-align: center;
+//     }
+//     .columns.left {
+//         border-right: none;
+//     }  
+// }

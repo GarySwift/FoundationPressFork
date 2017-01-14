@@ -1,31 +1,62 @@
-# FoundationPress [![Build Status](https://travis-ci.org/olefredrik/FoundationPress.svg?branch=master)](https://travis-ci.org/olefredrik/FoundationPress)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/olefredrik/foundationpress?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+# Fork Notes
+This ia a fork of olefredrik's __FoundationPress__. Please find original here: <https://github.com/olefredrik/FoundationPress>
 
-This is a starter-theme for WordPress based on Foundation 6, the most advanced responsive (mobile-first) framework in the world. The purpose of FoundationPress, is to act as a small and handy toolbox that contains the essentials needed to build any design. FoundationPress is meant to be a starting point, not the final product.
+This fork will mostly be used as a place to keep my most used modifications and templates.
 
-Please fork, copy, modify, delete, share or do whatever you like with this.
-
-All contributions are welcome!
+There will be significant focus on implementing Advanced Custom Fields features. 
 
 ## Requirements
 
-**This project requires [Node.js](http://nodejs.org) v4.x.x to v6.9.x to be installed on your machine.** Please be aware that you will most likely encounter problems with the installation if you are using v7.1.0 with all the latest features.
+This project requires [Node.js](http://nodejs.org) v4.x.x  to be installed on your machine. Please be aware that you may encounter problems with the installation if you are using v5.1.0 with all the latest features.
 
 FoundationPress uses [Sass](http://Sass-lang.com/) (CSS with superpowers). In short, Sass is a CSS pre-processor that allows you to write styles more effectively and tidy.
 
 The Sass is compiled using libsass, which requires the GCC to be installed on your machine. Windows users can install it through [MinGW](http://www.mingw.org/), and Mac users can install it through the [Xcode Command-line Tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).
 
-If you have not worked with a Sass-based workflow before, I would recommend reading [FoundationPress for beginners](https://foundationpress.olefredrik.com/posts/tutorials/foundationpress-for-beginners), a short blog post that explains what you need to know.
-
 ## Quickstart
 
 ### 1. Clone the repository and install with npm
+**Note:** You can change `ThemeFolder` to something more meaningful such as the project name or leave out completely to use the default name `FoundationPress`.
+
 ```bash
 $ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/olefredrik/FoundationPress.git
-$ cd FoundationPress
+$ git clone https://github.com/GarySwift/FoundationPress.git ThemeFolder && cd $_
 $ npm install
 ```
+#### Optional Reminders
+The following tips are completly optional but I leave them here as reminder to myself for new installation of WordPress.
+
+#####I. Change the WordPress Administrator User ID
+
+By changing the WordPress administrator user ID you are protecting your WordPress from targeted attacks.
+
+Connect to your WordPress database using the MySQL command line tool or the web based phpMyAdmin and execute the below queries on the WordPress database:
+
+```sql
+UPDATE wp_users SET ID = 1024 WHERE ID = 1;
+UPDATE wp_usermeta SET user_id = 1024 WHERE user_id = 1;
+ALTER TABLE wp_users AUTO_INCREMENT = 2048;
+```
+
+Ref: <https://premium.wpmudev.org/blog/change-default-wordpress-uploads-folder/>
+
+**Tip:** Always specify a high value for the new WordPress administrator ID. The higher the value is the less chances of it being discovered and the longer an attack will take.
+
+#####II. Change the Default WordPress Uploads Folder
+
+Open your wp-config.php file, locoed at the root of your WordPress installation, and add the following snippet:
+
+```php
+define('UPLOADS', 'assets');
+```
+
+Make sure you add this code before the line:
+
+```php
+require_once(ABSPATH.’wp-settings.php’);
+```
+
+ref: <https://premium.wpmudev.org/blog/change-default-wordpress-uploads-folder/>
 
 ### 2. While you're working on your project, run:
 
@@ -48,148 +79,224 @@ Build all assets minified and without sourcemaps:
 ```bash
 $ npm run production
 ```
+### 4. For packaging everything with node requiremnts, run:
 
-### 4. To create a .zip file of your theme, run:
+```bash
+$ npm run build
+```
 
+Build all assets minified and without sourcemaps:
 ```bash
 $ npm run package
 ```
 
-Running this command will build and minify the theme's assets and place a `.zip` archive of the theme in the `packaged` directory. This excludes the developer files/directories from your theme like `node_modules`, `assets/components`, etc. to keep the theme lightweight for transferring the theme to a staging or production server.
+Get packaged zip in `ThemeFolder/packages`
 
-### Styles
+## Fork Differences
 
- * `style.css`: Do not worry about this file. (For some reason) it's required by WordPress. All styling are handled in the Sass files described below
+#### SASS
+All extra sass is found in the `ThemeFolder/assets/scss/theme/` folder. All includes are added to the file in here `theme.scss`. In turn, this is added to `ThemeFolder/assets/scss/foundation.scss`. This is only change made __olefredrik's__ scss.
 
- * `assets/scss/foundation.scss`: Make imports for all your styles here
- * `assets/scss/global/*.scss`: Global settings
- * `assets/scss/components/*.scss`: Buttons etc.
- * `assets/scss/modules/*.scss`: Topbar, footer etc.
- * `assets/scss/templates/*.scss`: Page template spesific styling
-
-Please note that you **must** run `npm run build` or `npm run watch` in your terminal for the styles to be copied and concatenated. See the [Gulpfile.js](https://github.com/olefredrik/FoundationPress/blob/master/gulpfile.js) for details
-
-### Scripts
-
-* `assets/javascript/custom`: This is the folder where you put all your custom scripts. Every .js file you put in this directory will be minified and concatenated one single .js file. (This is good for site speed and performance)
-
-Please note that you must run `npm run build` or `npm run watch` in your terminal for the scripts to be copied and concatenated. See [Gulpfile.js](https://github.com/olefredrik/FoundationPress/blob/master/gulpfile.js) for details
-
-### The main styles and scripts generated by the build
-
-Version control on these files are turned off because they are automatically generated as part of the build process.
-
-* `assets/stylesheets/foundation.css`: All Sass files are minified and compiled to this file
-* `assets/stylesheets/foundation.css.map`: CSS source maps
-
-* `assets/javascript/vendor`: Vendor scripts are copied from `assets/components/` to this directory. We use this path for enqueing the vendor scripts in WordPress.
-
-### Check For WordPress Coding Standards
-
-Foundation comes with everything you need to run tests that will check your theme for WordPress Coding Standards. To enable this feature you'll need to install PHP Codesniffer, along with the WordPress Coding Standards set of "Sniffs". You'll need to have [Composer](https://getcomposer.org/) To install both run the following:
-```bash
-$ composer create-project wp-coding-standards/wpcs:dev-master --no-dev
-```
-When prompted to remove existing VCS, answer Yes by typing `Y`.
-
-Once you have installed the packages, you can check your entire theme by running:
-```bash
-$ npm run phpcs
+```scss
+// Custom
+@import "theme/theme";
 ```
 
-If there are errors that Code Sniffer can fix automatically, run the following command to fix them:
-```bash
-$ npm run phpcbf
+#### JavaScript
+As recommended in the the parent repository, all custom scripts are kept in `assets/javascript/custom/`. All frontend scripts added by this fork begin with an underscore.
+
+The most important script here is `_form-builder.js`. This controls the client side for `Form Builder` WordPress template.
+
+There are additional scripts that can be loaded by the __WordPress__ backend. These are located in `assets/javascript/theme/`.
+
+Included Libraries:
+
+__Magnific-Popup:__ <https://github.com/dimsemenov/Magnific-Popup>
+
+>Magnific Popup is a responsive lightbox & dialog script with focus on performance and providing best experience for user with any device
+(for jQuery or Zepto.js).
+
+```
+_magnific-popup.js
+_magnific-popup-event-listener.js
 ```
 
-## Demo
+__Google Maps API:__ Allows users add Google maps using ACF. The event listner for google maps is located in `template-parts/_google-maps.js.php` and looded inline by `footer.php`.
 
-* [Clean FoundationPress install](http://foundationpress.olefredrik.com/)
-* [FoundationPress Kitchen Sink - see every single element in action](http://foundationpress.olefredrik.com/kitchen-sink/)
+```
+_google-maps.js
+```
 
-## Unit Testing With Travis-CI
+__Sticky:__ <http://stickyjs.com/>
 
-FoundationPress is completely ready to be deployed to and tested by Travis-CI for WordPress Coding Standards and best practices. All you need to do to activate the test is sign up and follow the instructions to point Travis-CI towards your repo. Just don't forget to update the status badge to point to your repositories unit test.
-[Travis-CI](https://travis-ci.org/)
+>Sticky is a jQuery plugin that gives you the ability to
+make any element on your page always stay visible.
 
-## UI toolkits for rapid prototyping
+Used to keep the topbar sticky, even if there is content above it.
 
-* [Foundation UI Kit for Axure RP](https://gumroad.com/l/foundation-ui-kit-axure-rp)
-* [FoundationXD - Foundation UI Kit for Adobe XD](https://gumroad.com/l/foundation-ui-kit-xd)
-* [FoundationPSD - Foundation UI Kit for Photoshop](https://gumroad.com/l/foundation-ui-kit-psd)
+```
+_sticky.js
+_sticky-event-listener.js
+```
+#### WordPress Function Library
+This is the big one. Directory structure shown below. More to follow
 
-## Tutorials
+```
+├── __acf-load-post-types-into-select.php
+├── _add-custom-admin-js.php
+├── _add-tips-metabox.php
+├── _add-wp-admin-theme-customizations-js.php
+├── _admin-notices.php
+├── _change-menu-order-for-pages.php
+├── _custom-dashboard-widget.php
+├── _featured-image.php
+├── _google-maps-api.php
+├── _login-page-mods.php
+├── _navigation.php
+├── _remove-add-media-buttons.php
+├── _remove-admin-dashboard-widgets.php
+├── _remove-comments-menu-item.php
+├── _remove-comments-support.php
+├── _remove-footer-admin.php
+├── _remove-tools-menu-item.php
+├── _rename-posts-in-menu.php
+├── _select2.php
+├── _set-wordpress-admin-area-color-scheme.php
+├── _slug-text.php
+├── _tiny-mce.php
+├── _wordpress-greeting.php
+├── _wp-post-format-theme-support.php
+├── acf
+│   ├── _acf-cpt-team-profile.json
+│   ├── _acf-cpt-team-profile.php
+│   ├── _acf-function-form-builder.json
+│   ├── _acf-function-form-builder.php
+│   ├── _acf-function-test-pages-notes.php
+│   ├── _contact-page-additional-fields.json
+│   ├── _contact-page-additional-fields.php
+│   ├── _flexible-content-v1.0.json
+│   ├── _flexible-content-v1.0.php
+│   ├── _flexible-content-v1.1.json
+│   ├── _flexible-content-v1.1.php
+│   ├── _flexible-content.json
+│   ├── _flexible-content.php
+│   ├── _include-sidebar-options-in-functions-file.php
+│   ├── _page-layout-settings.json
+│   ├── _page-layout-settings.php
+│   ├── _page-sidebar-settings.json
+│   ├── _page-sidebar-settings.php
+│   ├── _post-additional-fields.json
+│   ├── _post-additional-fields.php
+│   ├── _post-format-gallery.json
+│   ├── _post-format-gallery.php
+│   ├── _post-format-video.json
+│   ├── _post-format-video.php
+│   ├── _sidebar-option-company-details.json
+│   ├── _sidebar-option-company-details.php
+│   ├── _sidebar-option-contact-details.json
+│   ├── _sidebar-option-contact-details.php
+│   ├── _sidebar-option-contact-numbers.json
+│   ├── _sidebar-option-contact-numbers.php
+│   ├── _sidebar-option-location.php
+│   ├── _sidebar-option-logos-images.json
+│   ├── _sidebar-option-logos-images.php
+│   ├── _sidebar-option-social-media.json
+│   ├── _sidebar-option-social-media.php
+│   ├── _sidebar-options-opening-hours.php
+│   ├── _test-pages-notes.json
+│   ├── _test-pages-notes.php
+│   ├── _testimonial-additonal-fields.json
+│   ├── _testimonial-additonal-fields.php
+│   ├── _testimonials-repeater.json
+│   ├── _testimonials-repeater.php
+│   ├── _widget-sidebar-menu-settings.json
+│   ├── _widget-sidebar-menu-settings.php
+│   ├── _widget-tester.json
+│   ├── _widget-tester.php
+│   ├── _widget-text-image-box.json
+│   ├── _widget-text-image-box.php
+│   └── hero_image_acf-export-2016-03-29.json
+├── admin-bar-wordpress-logo
+│   ├── _rebranding-wordpress-logo.php
+│   ├── _remove-wp-logo-from-admin-bar.php
+│   ├── brightlight_text-xs.png
+│   └── logo.png
+├── custom-post-types
+│   ├── __custom-post-type-title-placeholder.php
+│   ├── _team.json
+│   ├── _team.php
+│   ├── _testimonial.json
+│   └── _testimonial.php
+├── login
+│   ├── brightlight-logo.png
+│   ├── login_styles.css
+│   └── logo.png
+├── posts-screen-columns
+│   ├── _page.php
+│   ├── _team.php
+│   └── _testimonial.php
+├── widgets
+│   ├── sidebar-menu-widget
+│   │   ├── _sidebar-menu-widget-function.php
+│   │   └── _sidebar-menu-widget.php
+│   ├── test-widget
+│   │   ├── _test-widget-function.php
+│   │   └── _test-widget.php
+│   ├── text-and-image-box-widget
+│   │   ├── _image.php
+│   │   ├── _text-and-image-box-widget-function.php
+│   │   └── _text-and-image-box-widget.php
+│   └── text-widget
+│       ├── _text-widget-function.php
+│       └── _text-widget.php
+└── wp-admin-color-themes
+    ├── _restrict-users-from-changeing-admin-theme.php
+    ├── _set-wordpress-admin-area-color-scheme-based-on-role.php
+    ├── _set-wordpress-admin-area-color-scheme.php
+    ├── _wp-admin-color-themes.php
+    └── colors
+        ├── _admin.scss
+        ├── _mixins.scss
+        ├── _variables.scss
+        ├── aubergine
+        │   ├── colors-rtl.css
+        │   ├── colors.css
+        │   └── colors.scss
+        ├── brightlight
+        │   ├── colors-rtl.css
+        │   ├── colors.css
+        │   ├── colors.css.map
+        │   └── colors.scss
+        ├── flat
+        │   ├── colors-rtl.css
+        │   ├── colors.css
+        │   └── colors.scss
+        └── primary
+            ├── colors-rtl.css
+            ├── colors.css
+            └── colors.scss
 
-* [FoundationPress for beginners](https://foundationpress.olefredrik.com/posts/tutorials/foundationpress-for-beginners/)
-* [Responsive images in WordPress with Interchange](http://rachievee.com/responsive-images-in-wordpress/)
-* [Build a Responsive WordPress theme](http://www.webdesignermag.co.uk/build-a-responsive-wordpress-theme/)
-* [Learn to use the _settings file to change almost every aspect of a Foundation site](http://zurb.com/university/lessons/66)
-* [Other lessons from Zurb University](http://zurb.com/university/past-lessons)
+```
 
-## Documentation
+### Debugging
+This is a general WordPress note and is not related to the theme.
+The following code should be placed in `wp-config.php` in the root directory.
+```
+$debug=true;// Turn on/off Wordpress debugging (and log it in debug.log)
+if($debug) {
+    // Turn debugging on
+    define('WP_DEBUG', true);
 
-* [Zurb Foundation Docs](http://foundation.zurb.com/docs/)
-* [WordPress Codex](http://codex.wordpress.org/)
+    // Tell WordPress to log everything to /wp-content/debug.log
+    define('WP_DEBUG_LOG', true);
 
-## Showcase
+    // Turn off the display of error messages on your site
+    define('WP_DEBUG_DISPLAY', false);
 
-* [Harvard Center for Green Buildings and Cities](http://www.harvardcgbc.org/)
-* [INTI International University & Colleges](http://international.newinti.edu.my/)
-* [Conservative Leadership Conference](http://civitasclc.com/)
-* [The New Tropic](http://thenewtropic.com/)
-* [Parent-Child Home Program](http://www.parent-child.org/)
-* [Hip and Healthy](http://hipandhealthy.com/)
-* [Threadbird blog](http://blog.threadbird.com/)
-* [Public House Wines](http://publichousewine.com/)
-* [Franchise Career Advisors](http://franchisecareeradvisors.com/)
-* [Le saint](http://www.lesaint.ca/)
-* [Help blog](http://help.com/blog/)
-* [Maren Schmidt](http://marenschmidt.com/)
-* [Ciancimino Gallery](http://ciancimino.com/)
-* [The Rainbow Venues](http://www.therainbowvenues.co.uk/)
-* [Ameronix](http://www.ameronix.com/)
-* [Finnerodja](http://www.finnerodja.se/)
-* [Glossop Cartons](http://www.glossopcartons.co.uk/)
-* [Ready4Work](http://www.ready4work.my/)
-* [Just Legal](http://www.justlegal.co.jp/en/)
-* [Vintage and Stuff](http://vintageandstuff.com/)
-* [Software for FM](http://softwareforfm.co.uk/)
-* [WP Diamonds](http://www.wpdiamonds.com/)
-* [Storm Arts](http://stormarts.fi/)
-* [USS Illinois](http://ussillinois.org/)
-* [OffGrid Magazine](https://offgridweb.com/)
-* [Axe](http://www.axe.be/)
-* [ProfitGym](http://profitgym.nl/)
-* [Dr Now](http://www.drnow.com/)
-* [Agritur Piasina](http://www.agriturpiasina.it/)
-* [Atomic Interactive](http://atomicinteractive.com/)
-* [Byington Vineyard & Winery](http://byington.com/)
-* [Philanthropy House](http://philanthropyhouse.eu/)
-* [TVA Group](http://www.groupe-tva.com/en/)
-* [Forte Science](https://www.forte-science.co.jp/)
-* [Well Made Studio](http://wellmadestudio.com/)
-* [Show And Tell](http://www.showandtelluk.com/)
-* [Wahl + Case](https://www.wahlandcase.com/)
-* [Forefront Dermatology](https://forefrontdermatology.com/)
-* [Wirthschaftsjunioren](http://www.wirtschaftsjunioren.org/)
-
-
->Credit goes to all the brilliant designers and developers out there. Have **you** made a site that should be on this list? [Please let me know](https://twitter.com/olefredrik)
-
-## Contributing
-#### Here are ways to get involved:
-
-1. [Star](https://github.com/olefredrik/FoundationPress/stargazers) the project!
-2. Answer questions that come through [GitHub issues](https://github.com/olefredrik/FoundationPress/issues)
-3. Report a bug that you find
-4. Share a theme you've built on top of FoundationPress
-5. [Tweet](https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Ffoundationpress.olefredrik.com%2F&text=Check%20out%20FoundationPress%2C%20the%20ultimate%20%23WordPress%20starter-theme%20built%20on%20%23Foundation%206&tw_p=tweetbutton&url=http%3A%2F%2Ffoundationpress.olefredrik.com&via=olefredrik) and [blog](http://www.justinfriebel.com/my-first-experience-with-foundationpress-a-wordpress-starter-theme-106/) your experience of FoundationPress.
-
-#### Pull Requests
-
-Pull requests are highly appreciated. Please follow these guidelines:
-
-1. Solve a problem. Features are great, but even better is cleaning-up and fixing issues in the code that you discover
-2. Make sure that your code is bug-free and does not introduce new bugs
-3. Create a [pull request](https://help.github.com/articles/creating-a-pull-request)
-4. Verify that all the Travis-CI build checks have passed
+    // For good measure, you can also add the follow code, which will hide errors from being displayed on-screen
+    @ini_set('display_errors', 0);
+}
+else {
+    define('WP_DEBUG', false);
+}
+```

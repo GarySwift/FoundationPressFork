@@ -92,7 +92,7 @@ function row_class($row_type, $total, $blocks_in_row_sm, $blocks_in_row_med, $bl
     // if($total%2===0) {
     //     return 'row small-up-1'.' medium-up-'.$total.' large-up-'.$total;
     // }
-    if($row_type==='flex') {
+    if($row_type==='grid') {
         return 'row';
         
     }
@@ -101,19 +101,16 @@ function row_class($row_type, $total, $blocks_in_row_sm, $blocks_in_row_med, $bl
     }   
 }
 function block_class($row_type, $total, $count, $blocks_in_row_sm, $blocks_in_row_med, $blocks_in_row) {
-    if($total%2===0) {
-        return 'column';
-    }
-    if($row_type=='block') {
-        return 'column';
-    }
-    else if($row_type=='flex') {
-        if($count==$total) {
+    if ($row_type=="grid") {
+        if($count==$total && $blocks_in_row_med%2==0) {
             return 'columns small-12 medium-12 large-'.(12/$blocks_in_row).' pad-med-l-r';//0 
         }
         else {
             return 'columns small-'.(12/$blocks_in_row_sm).' medium-'.(12/$blocks_in_row_med).' large-'.(12/$blocks_in_row);
         }
+    }
+    else if($row_type=='block') {
+        return 'column column-block';
     }
 }
  
