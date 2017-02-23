@@ -1,11 +1,9 @@
 <?php
-echo $class;
 function the_map($class='') {
     global $include_google_maps_in_footer;
     $include_google_maps_in_footer=true; // If set to true, google maps functions will be included in the footer
 
     if(get_field('google_map', 'option')): 
-    	// echo 'map';
         $map = get_field('google_map', 'option');
         $latLng = array();
         $latLng[] = $map['lat'];

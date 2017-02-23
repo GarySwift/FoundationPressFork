@@ -3,7 +3,7 @@ class Test_Widget extends WP_Widget
 {
     //ref: https://www.directbasing.com/resources/wordpress/advanced-custom-fields-widget/#create-kick-ass-widgets-with-acf
     function Test_Widget() {
-        parent::WP_Widget(false, "Test Widget","description=Simple header and text area");
+        parent::__construct(false, "Test Widget","description=Simple header and text area");
     }
  
     function update($new_instance, $old_instance) {  

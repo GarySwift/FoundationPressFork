@@ -4,8 +4,7 @@ class Contact_Details_Widget extends WP_Widget
     //ref: https://www.directbasing.com/resources/wordpress/advanced-custom-fields-widget/#create-kick-ass-widgets-with-acf
     function Contact_Details_Widget() 
     {
-        parent::WP_Widget(false, "Contact Details");
-        parent::WP_Widget(false, "Contact Details","description=This will display custom settings such as address, email and social media.");
+        parent::__construct(false, "Contact Details","description=This will display custom settings such as address, email and social media.");
     }
  
     function update($new_instance, $old_instance) 

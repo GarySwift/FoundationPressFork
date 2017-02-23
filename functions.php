@@ -52,5 +52,4 @@ require_once( 'library/responsive-images.php' );
 
 require_once('functions-fork.php');
 require_once('library-fork/functions-fork-admin.php');
-require_once('library-fork/_ajax.php');
-require_once('functions-theme-specific.php');
+// require_once('functions-theme-specific.php');

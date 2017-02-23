@@ -8,7 +8,7 @@ function rebranding_wordpress_logo(){
     $wp_admin_bar->remove_menu('feedback');
     $wp_admin_bar->remove_menu('wporg');
     
-    $image = get_template_directory_uri ().'/library/fork/admin-bar-wordpress-logo/'.'logo.png';
+    $image = get_template_directory_uri ().LIBRARY_FORK.'/admin-bar-wordpress-logo/'.'logo.png';
     //and this is to change wordpress logo
     $wp_admin_bar->add_menu( array(
         'id'    => 'wp-logo',

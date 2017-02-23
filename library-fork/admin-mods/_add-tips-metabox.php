@@ -29,8 +29,9 @@ function top_right_help_metabox_content() {
 add_action( 'add_meta_boxes', 'metabox_top_right' );
 
 
-add_action('wp_dashboard_setup', 'tips_dashboard_widgets');
-function tips_dashboard_widgets() {
-	global $wp_meta_boxes;
-	wp_add_dashboard_widget('brightLight_tips', 'BrightLight Tips', 'top_right_help_metabox_content');
-}
+# Show the 'tips' widget on the WordPress dashboard
+// function tips_dashboard_widgets() {
+// 	global $wp_meta_boxes;
+// 	wp_add_dashboard_widget('brightLight_tips', 'BrightLight Tips', 'top_right_help_metabox_content');
+// }
+// add_action('wp_dashboard_setup', 'tips_dashboard_widgets');

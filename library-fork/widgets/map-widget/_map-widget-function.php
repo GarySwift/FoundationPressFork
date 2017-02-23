@@ -4,8 +4,7 @@ class Map_Widget extends WP_Widget
     //ref: https://www.directbasing.com/resources/wordpress/advanced-custom-fields-widget/#create-kick-ass-widgets-with-acf
     function Map_Widget() 
     {
-        parent::WP_Widget(false, "Map Widget");
-        parent::WP_Widget(false, "Map Widget","description=Add a map to the footer");
+        parent::__construct(false, "Map Widget","description=Add a map to the footer");
     }
  
     function update($new_instance, $old_instance) 

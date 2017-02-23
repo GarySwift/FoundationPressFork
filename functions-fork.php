@@ -4,6 +4,10 @@
 /*****************************************************************************************************/
 
 define("LIBRARY_FORK", "/library-fork/");
+define("AJAX_NONCE", "wp-enqueue-script");
+
+require_once('library-fork/functions-wp-enqueue-script.php');
+require_once('library-fork/functions-ajax.php');
 
 /***********************************************/
 /************* Start Posts & pages *************/
@@ -56,7 +60,7 @@ require_once( 'library-fork/acf/_page-layout-settings.php' );
 
 require_once( 'library-fork/acf/_contact-page-additional-fields.php' );
 # Form Builde
-require_once( 'library-fork/acf/_acf-function-form-builder.php' );
+// require_once( 'library-fork/acf/_acf-function-form-builder.php' );
 require_once( 'library-fork/acf/_acf-function-test-pages-notes.php' );
 
 # ACF Sidebar hero-image with header, subheader manager - can be used by multiple templpates - read file for details
@@ -84,7 +88,7 @@ require_once( 'library-fork/_google-api-key.php' );
   * Change default menus
   */
 $show_menu_desktop_center=false;
-$show_menu_sidebar=true;
+$show_menu_sidebar=false;
 $show_menu_visual_sitemap=false;
 
 if($show_menu_desktop_center) {
@@ -97,7 +101,7 @@ if($show_menu_sidebar) {
 if($show_menu_visual_sitemap) {
 	require_once( 'library-fork/navigation/_navigation-sitemap-visual.php' );
 }
-require_once( 'library-fork/navigation/_navigation-left-side-bar.php' );
+
 /** 
   * Admin sidebar options
   *
@@ -105,13 +109,13 @@ require_once( 'library-fork/navigation/_navigation-left-side-bar.php' );
   */
 
 # Choose what sidebar fields to show - these are ACF input fields that can be used globally
-$show_sidebar_options=true;
-$show_sidebar_option_contact_details=true;
-$show_sidebar_option_social_media=true;
+$show_sidebar_options=false;
+$show_sidebar_option_contact_details=false;
+$show_sidebar_option_social_media=false;
 $show_sidebar_option_company_details=false;
-$show_sidebar_option_contact_numbers=true;
+$show_sidebar_option_contact_numbers=false;
 $show_sidebar_options_opening_hours=false;
-$show_sidebar_option_location=true;
+$show_sidebar_option_location=false;
 $show_sidebar_option_global_contact_form=false;
 
 if($show_sidebar_options) {
@@ -214,7 +218,7 @@ if($show_industries) {
 # Choose widgets to show
 $show_test_widget=false;
 $show_text_and_image_box_widget=false;
-$sidebar_menu_widget=true;
+$sidebar_menu_widget=false;
 $show_contact_form_widget=false;
 $show_map_widget=false;
 $show_contact_details_widget=false;
@@ -254,7 +258,5 @@ if($show_contact_details_widget) {
 	require_once( 'library-fork/widgets/contact-details-widget/_contact-details-widget-function.php' );
 	require_once( 'library-fork/widgets/contact-details-widget/_acf-widget-settings.php' ); // ACF widget settings
 }
-	
 /** End Front End Widgets */
 /**************************************************************************************************/
-

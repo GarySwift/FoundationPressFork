@@ -4,8 +4,7 @@ class Contact_Form_Widget extends WP_Widget
     //ref: https://www.directbasing.com/resources/wordpress/advanced-custom-fields-widget/#create-kick-ass-widgets-with-acf
     function Contact_Form_Widget() 
     {
-        parent::WP_Widget(false, "Contact Form Widget");
-        parent::WP_Widget(false, "Contact Form Widget","description=Add a contact form to the footer");
+        parent::__construct(false, "Contact Form Widget","description=Add a contact form to the footer");
     }
  
     function update($new_instance, $old_instance) 

@@ -36,7 +36,7 @@
         <div class="row <?php echo $small_size.' '.$medium_size.' '.$large_size; ?> lightbox-gallery">
             <?php foreach( $images as $image ): ?>
                 <div class="column text-center">
-                    <a href="<?php echo $image['url']; ?>" title="<?php echo ($image['caption'] ? $image['caption']  : 'Enlarged Image' ); ?>">
+                    <a href="<?php echo $image['url']; ?>" title="<?php echo ($image['caption'] ? $image['caption']  : '' ); ?>" class="lightbox">
                         <img src="<?php echo $image['sizes'][$image_size]; ?>" alt="<?php echo ($image['caption'] ? $image['caption']  : 'Portfolio Image' ); ?>" class="thumbnail" />
                     </a>
                     <p><?php //echo $image['caption']; ?></p>

@@ -1,6 +1,7 @@
 <?php   
 function front_end_form_input_loop($form_data, $tabIndex=1, $form_pristine=true, $form_num_error_found=0) {
     $i=0;
+
     foreach ($form_data as $id => $settings):
         $tabIndex++;
         /*if($i!=$settings['section']): ?>

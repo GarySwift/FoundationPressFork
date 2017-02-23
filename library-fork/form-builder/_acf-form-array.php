@@ -1,4 +1,19 @@
 <?php 
+function get_submit_from_name() {
+    if (get_sub_field('form_name')) {
+         $form_settings["form-name"] = sanitize_title_with_dashes( get_sub_field('form_name') );
+    }
+    else {
+         $form_settings["form-name"] = "request-form";
+    }
+    if (get_sub_field('button_text')) {
+          $form_settings["submit-button-text"] = get_sub_field('button_text');
+    }
+    else {
+          $form_settings["submit-button-text"] = "Submit Form";
+    }
+    
+}
 function get_form_data($form_inputs="form_inputs", $option=false) {
     $form_settings=false;
     // Construct the array that makes the form
@@ -10,9 +25,20 @@ function get_form_data($form_inputs="form_inputs", $option=false) {
         $form_settings["enctype"] = "";
         $form_settings["form_class"] = "";
         $form_settings["option"]=$option;
-        $form_settings["form-name"] = "request-form";
-        $form_settings["submit-button-name"] = "submit-request-form";
-        $form_settings["submit-button-text"] = "Submit Form";
+        if (get_sub_field('form_name')) {
+             $form_settings["form-name"] = sanitize_title_with_dashes( get_sub_field('form_name') );
+        }
+        else {
+             $form_settings["form-name"] = "request-form";
+        }
+        if (get_sub_field('button_text')) {
+              $form_settings["submit-button-text"] = get_sub_field('button_text');
+        }
+        else {
+              $form_settings["submit-button-text"] = "Submit Form";
+        }
+
+        $form_settings["submit-button-name"] = "submit-".$form_settings["form-name"];
         $form_settings["error_class"] = "";
         $form_settings["ajax"] = false;
         $form_data = array();
