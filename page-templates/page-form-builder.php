@@ -14,7 +14,7 @@ if (function_exists('get_form_data')) {
 
 // If POST
 if(isset($_POST['submit-request-form'])){ //check if form was submitted
-	// echo "<pre>"; var_dump($_POST); echo "</pre>";
+	echo "<pre>"; var_dump($_POST); echo "</pre>";
     $form_settings = process_form($form_settings, $_POST);
 }		
 // acf_form_feedback($form_settings);
